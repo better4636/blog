@@ -1,15 +1,14 @@
-import { Fragment } from 'react';
-
-import BasicLayout from './layout/basicLayout.jsx';
-import LoginForm from './component/login.jsx';
+import { Route } from 'react-router-dom';
+import { Posting, Login } from './pages/index.jsx';
 
 import './App.css';
 
 function App() {
   return (
-    <Fragment>
-      <BasicLayout content={<LoginForm />} />
-    </Fragment>
+    <div>
+      <Route exact path="/" component={Login} />
+      <Route path="/posting" component={Posting} />
+    </div>
   );
 }
 

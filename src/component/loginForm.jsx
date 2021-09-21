@@ -1,6 +1,6 @@
 import { Form, Input, Button, Checkbox, Card } from 'antd';
 
-export default function LoginForm(_) {
+export default function LoginForm({ onSubmit }) {
   const [form] = Form.useForm();
 
   return (
@@ -10,12 +10,7 @@ export default function LoginForm(_) {
         form={form}
         labelCol={{ span: 8 }}
         wrapperCol={{ span: 16 }}
-        onFinish={(val) => {
-          console.log('Success:', val);
-        }}
-        onFinishFailed={(errorInfo) => {
-          console.log('Failed:', errorInfo);
-        }}
+        onFinish={onSubmit}
         autoComplete="off"
       >
         <Form.Item
