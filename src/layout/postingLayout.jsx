@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Dropdown, Layout, Menu } from 'antd';
+import { Avatar, Button, Dropdown, Layout, Menu } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
 
 const { Header, Sider, Content } = Layout;
@@ -8,22 +8,18 @@ export default function PostingLayout({ sideMenu }) {
   const menu = (
     <Menu style={{ outline: '#3d5e80 solid' }}>
       <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
-          1st menu item
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.aliyun.com">
-          2nd menu item
-        </a>
-      </Menu.Item>
-      <Menu.Item>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.luohanacademy.com">
-          3rd menu item
-        </a>
+        <Button
+          type="text"
+          onClick={() => {
+            window.location = '/';
+          }}
+        >
+          Logout
+        </Button>
       </Menu.Item>
     </Menu>
   );
+
   return (
     <Layout>
       <Sider style={{ minHeight: '100vh' }}>{sideMenu}</Sider>
